@@ -710,13 +710,16 @@ function initDownloadModal() {
       }
     });
 
-    // Action Buttons inside Modal
+    // Action Buttons inside Modal (Native HTML5 downloads with toast feedback)
     document.querySelectorAll('.btn-download-file').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const fileName = btn.dataset.file || 'InkOver-Setup.exe';
-        simulateDownload(fileName);
+      btn.addEventListener('click', () => {
+        const isZip = btn.getAttribute('download')?.toLowerCase().endsWith('.zip');
+        const fileName = isZip ? 'InkOver-Portable.zip' : 'InkOver-Setup.exe';
+        showToast(`Downloading ${fileName}... Thank you for choosing InkOver!`);
         modal.classList.remove('active');
+        setTimeout(() => {
+          showToast(`Downloaded ${fileName}! Run the setup to start drawing.`);
+        }, 1500);
       });
     });
   }
