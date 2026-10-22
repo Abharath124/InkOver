@@ -1046,8 +1046,9 @@
         </div>
 
         <div class="modal-downloads-list">
-          <!-- Standard EXE Installer -->
-          <a href="assets/downloads/InkOver-Setup.exe" download="InkOver-Setup.exe" class="download-option btn-download-file">
+          <!-- ZIP — Primary recommended (no Chrome block) -->
+          <a href="assets/downloads/InkOver-Setup.zip" download="InkOver-Setup.zip" class="download-option btn-download-file" style="border: 2px solid var(--brand-primary); position:relative;">
+            <span style="position:absolute;top:-11px;left:16px;background:var(--brand-primary);color:#fff;font-size:0.7rem;font-weight:700;padding:2px 10px;border-radius:20px;letter-spacing:0.05em;">RECOMMENDED</span>
             <div class="download-option-left">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF5722" stroke-width="2.5">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -1055,14 +1056,14 @@
                 <line x1="12" y1="15" x2="12" y2="3"></line>
               </svg>
               <div class="download-option-info">
-                <h5>Standard Installer (.exe) — Recommended</h5>
-                <p>Windows 11 &amp; 10 (64-bit) • 484 KB</p>
+                <h5>InkOver Portable (.zip) — Windows 11 &amp; 10</h5>
+                <p>Extract ZIP &rarr; double-click <strong>InkOver.exe</strong> — no install needed &bull; 443 KB</p>
               </div>
             </div>
             <span style="font-weight: 700; color: var(--brand-primary); font-size: 0.85rem;">Download &rarr;</span>
           </a>
 
-          <!-- MSI Silent Installer for Enterprise -->
+          <!-- EXE direct (may trigger Chrome warning) -->
           <a href="assets/downloads/InkOver-Setup.exe" download="InkOver-Setup.exe" class="download-option btn-download-file">
             <div class="download-option-left">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2.5">
@@ -1071,26 +1072,18 @@
                 <line x1="12" y1="17" x2="12" y2="21"></line>
               </svg>
               <div class="download-option-info">
-                <h5>Enterprise Package (.exe)</h5>
-                <p>Silent unattended deployment ready • 484 KB</p>
+                <h5>Direct Installer (.exe)</h5>
+                <p>If Chrome warns &ldquo;dangerous&rdquo; → click <strong>Keep anyway</strong> in Downloads bar • 473 KB</p>
               </div>
             </div>
             <span style="font-weight: 700; color: #06B6D4; font-size: 0.85rem;">Download &rarr;</span>
           </a>
+        </div>
 
-          <!-- Portable ZIP -->
-          <a href="assets/downloads/InkOver-Setup.zip" download="InkOver-Portable.zip" class="download-option btn-download-file">
-            <div class="download-option-left">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5">
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-              </svg>
-              <div class="download-option-info">
-                <h5>Portable Archive (.zip)</h5>
-                <p>No administrative privileges required • 16.1 MB</p>
-              </div>
-            </div>
-            <span style="font-weight: 700; color: #10B981; font-size: 0.85rem;">Download &rarr;</span>
-          </a>
+        <div style="margin-top:1rem;padding:0.75rem 1rem;background:rgba(255,87,34,0.08);border-left:3px solid var(--brand-primary);border-radius:0 8px 8px 0;font-size:0.82rem;color:var(--text-muted);line-height:1.6;">
+          <strong style="color:var(--text-primary);">&#9432; How to run after download:</strong><br>
+          &bull; <strong>ZIP (Recommended)</strong>: Right-click the .zip &rarr; <em>Extract All</em> &rarr; open the folder &rarr; double-click <strong>InkOver.exe</strong> to launch<br>
+          &bull; <strong>EXE</strong>: If Chrome warns &ldquo;dangerous&rdquo;, press <strong>Ctrl+J</strong> &rarr; click &ldquo;&hellip;&rdquo; &rarr; <strong>Keep anyway</strong>, then run it
         </div>
       </div>
     </div>
