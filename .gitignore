@@ -1,17 +1,37 @@
-# OS generated files
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment files & Secrets
+.env
+*/.env
+.env.local
+.env.*.local
+
+# Databases & SQLite files
+*.sqlite
+*.sqlite-journal
+*.db
+backend/database.sqlite
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yearn-debug.log*
+
+# OS metadata
+.DS_Store
 Thumbs.db
 ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-.DS_Store
+[Dd]esktop.ini
 
-# Editor / IDE settings
+# IDEs
 .vscode/
 .idea/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
 
-# Temporary compiler files
-*.pdb
+# Temp folders
+.temp/
+.tmp/
+dist/
+build/

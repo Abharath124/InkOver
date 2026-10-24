@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+out/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# IDE & Editor configs
+.vscode/
+.idea/
+*.sw?
+
+# Logs & temp files
+*.log
+.temp/
+.tmp/

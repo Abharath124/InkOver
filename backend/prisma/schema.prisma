@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite" // Switch to "postgresql" when deploying to Neon or Supabase
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  name         String
+  email        String   @unique
+  passwordHash String   @map("password_hash")
+  role         String   @default("member") // "admin" | "member"
+  plan         String   @default("InkOver Studio Pro")
+  licenseKey   String?  @unique @map("license_key")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  @@map("users")
+}
+
+model Pricing {
+  id             Int      @id @default(autoincrement())
+  monthlyPrice   Float    @default(25.0) @map("monthly_price")
+  yearlyDiscount Float    @default(100.0) @map("yearly_discount")
+  yearlyPrice    Float    @default(200.0) @map("yearly_price")
+  discountBadge  String   @default("Save $100 / Year") @map("discount_badge")
+  updatedAt      DateTime @default(now() @updatedAt @map("updated_at")
+
+  @@map("pricing")
+}
+
+model Telemetry {
+  id                 Int      @id @default(autoincrement())
+  totalDownloads     Int      @default(385420) @map("total_downloads")
+  monthlySubscribers Int      @default(48250) @map("monthly_subscribers")
+  yearlySubscribers  Int      @default(74830) @map("yearly_subscribers")
+  updatedAt          DateTime @default(now()) @updatedAt @map("updated_at")
+
+
+  @@map("telemetry")
+}

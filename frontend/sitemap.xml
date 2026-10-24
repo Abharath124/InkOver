@@ -14,8 +14,26 @@
   </url>
   <url>
     <loc>https://inkover.app/pricing.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://inkover.app/signup.html</loc>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inkover.app/login.html</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://inkover.app/dashboard.html</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In – InkOver Screen Studio</title>
+  <meta name="description" content="Sign in to your InkOver Studio account. Access licenses, manage pricing settings, and download portable builds.">
+  <link rel="icon" type="image/png" href="assets/images/app_icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth-dashboard.css">
+</head>
+<body class="auth-page">
+
+  <!-- Ambient Glow Orbs -->
+  <div class="auth-ambient-glow auth-glow-1"></div>
+  <div class="auth-ambient-glow auth-glow-2"></div>
+
+  <!-- Minimal Header -->
+  <header class="site-header" style="background: rgba(11, 15, 25, 0.4); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+    <div class="container">
+      <div class="nav-inner" style="height: 70px;">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon-wrapper">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+            </svg>
+          </div>
+          <div class="brand-text">Ink<span class="brand-pen">Over</span></div>
+        </a>
+        <div class="nav-actions">
+          <span style="font-size: 0.88rem; color: #94A3B8;">New to InkOver?</span>
+          <a href="signup.html" class="btn btn-outline" style="padding: 7px 16px; font-size: 0.82rem;">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Auth Main Center -->
+  <main class="auth-container">
+    <div class="auth-card">
+      
+      <div class="auth-header">
+        <div class="auth-badge">Welcome Back</div>
+        <h1>Log In to Studio</h1>
+        <p>Access your dashboard, active licenses, and settings.</p>
+      </div>
+
+      <!-- Google One-Click Login -->
+      <button type="button" class="btn-google" id="btnGoogleLogin">
+        <svg viewBox="0 0 24 24">
+          <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+          <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/>
+          <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.17 0 9.98 0 12s.45 3.83 1.25 5.42l4.03-3.15z"/>
+          <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+        </svg>
+        <span>Continue with Google</span>
+      </button>
+
+      <div class="auth-divider">
+        <span>or sign in with email</span>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Email Address</label>
+          <div class="input-wrapper">
+            <span class="input-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </span>
+            <input type="email" id="loginEmail" class="form-input" placeholder="you@example.com" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="loginPassword">Password</label>
+          <div class="input-wrapper">
+            <span class="input-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </span>
+            <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required autocomplete="current-password">
+          </div>
+        </div>
+
+        <div class="form-row-space">
+          <label class="form-checkbox-label">
+            <input type="checkbox" id="rememberMe" checked>
+            <span>Remember me</span>
+          </label>
+          <a href="#" id="btnForgotPassword" class="auth-link">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-brand btn-submit">
+          Sign In &rarr;
+        </button>
+      </form>
+
+      <div class="auth-footer">
+        Don't have an account? <a href="signup.html" class="auth-link">Sign up free</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Forgot Password Modal -->
+  <div class="app-modal" id="forgotModal">
+    <div class="app-modal-content">
+      <button class="app-modal-close" id="closeForgotModal">&times;</button>
+      <div style="text-align: center; margin-bottom: 24px;">
+        <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(255, 87, 34, 0.12); color: var(--brand-primary); display: flex; align-items: center; justify-content: center; margin: 0 auto 14px auto;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
+        <h3 style="font-size: 1.4rem; color: #FFFFFF; margin-bottom: 6px;">Reset Password</h3>
+        <p style="font-size: 0.9rem; color: #94A3B8;">Enter your account email and we'll send you an instant reset link.</p>
+      </div>
+
+      <form id="forgotForm">
+        <div class="form-group">
+          <label class="form-label">Account Email</label>
+          <input type="email" id="forgotEmail" class="form-input" placeholder="you@example.com" required style="padding-left: 16px;">
+        </div>
+        <button type="submit" class="btn btn-brand" style="width: 100%; border-radius: 12px; padding: 13px;">
+          Send Reset Instructions
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/auth-pricing.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('loginForm');
+      const googleBtn = document.getElementById('btnGoogleLogin');
+      const forgotLink = document.getElementById('btnForgotPassword');
+      const forgotModal = document.getElementById('forgotModal');
+      const closeForgotModal = document.getElementById('closeForgotModal');
+      const forgotForm = document.getElementById('forgotForm');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('loginEmail').value.trim();
+        const pass = document.getElementById('loginPassword').value;
+
+        if (!email) return;
+
+        const user = authLogin(email, pass);
+        showAppToast(`Signed in as ${user.name}! Taking you to desktop download...`);
+        setTimeout(() => {
+          window.location.href = user.role === 'admin' ? 'dashboard.html' : 'index.html';
+        }, 900);
+      });
+
+      // Google OAuth simulation
+      googleBtn.addEventListener('click', () => {
+        const user = authGoogleLogin();
+        showAppToast(`Welcome back, ${user.name}!`);
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 800);
+      });
+
+      // Forgot Password Modal
+      forgotLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        forgotModal.classList.add('active');
+      });
+
+      closeForgotModal.addEventListener('click', () => {
+        forgotModal.classList.remove('active');
+      });
+
+      forgotModal.addEventListener('click', (e) => {
+        if (e.target === forgotModal) forgotModal.classList.remove('active');
+      });
+
+      forgotForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('forgotEmail').value.trim();
+        forgotModal.classList.remove('active');
+        showAppToast(`Reset instructions sent to ${email}! (Check spam/inbox)`);
+      });
+    });
+  </script>
+</body>
+</html>
